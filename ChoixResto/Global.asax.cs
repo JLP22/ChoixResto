@@ -1,5 +1,7 @@
-﻿using System;
+﻿using ChoixResto.Models;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -16,6 +18,10 @@ namespace ChoixResto
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            IDatabaseInitializer<BddContext> init = new InitChoixResto();
+            Database.SetInitializer(init);
+            init.InitializeDatabase(new BddContext());
         }
     }
 }
