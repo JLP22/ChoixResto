@@ -35,6 +35,7 @@ namespace ChoixResto.Controllers
                 return View("Error");
         }
 
+        //Binding lors de l'appel du controlleur avec requete POSt
         [HttpPost]
         public ActionResult ModifierRestaurant(Resto resto)
         {
